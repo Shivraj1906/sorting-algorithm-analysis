@@ -9,11 +9,11 @@
 </ul>
 <hr>
 ## Analysis of insertion sort
-![insertion sort](./graphs/insertion.jpg?raw=true)
+![insertion sort](/graphs/insertion.jpg?raw=true)
 <hr>
 ## Analysis of bubble sort
-![bubble sort](./graphs/bubble.jpg)
+![bubble sort](/graphs/bubble.jpg)
 <hr>
 ## Analysis of selection sort
-![selection sort](./graphs/selection.jpg)
+![selection sort](/graphs/selection.jpg)
 <small>*program was tested only on linux</small>
