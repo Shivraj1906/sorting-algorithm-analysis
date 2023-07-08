@@ -9,11 +9,11 @@
 </ul>
 <hr>
 ## Analysis of insertion sort
-![insertion sort](./graphs/insertion.jpg)
+![insertion sort](https://github.com/Shivraj1906/sorting-algorithm-analysis/blob/master/graphs/insertion.jpg)
 <hr>
 ## Analysis of bubble sort
-![bubble sort](./graphs/bubble.jpg)
+![bubble sort](https://github.com/Shivraj1906/sorting-algorithm-analysis/blob/master/graphs/bubble.jpg)
 <hr>
 ## Analysis of selection sort
-![selection sort](./graphs/selection.jpg)
+![selection sort](https://github.com/Shivraj1906/sorting-algorithm-analysis/blob/master/graphs/selection.jpg)
 <small>*program was tested only on linux</small>
