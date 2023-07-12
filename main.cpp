@@ -1,10 +1,10 @@
 #include<iostream>
 #include<vector>
 
-#include "./timer.h"
-#include "./sort.h"
-#include "./utils.h"
-#include "./file.h"
+#include "./src/timer.h"
+#include "./src/sort.h"
+#include "./src/utils.h"
+#include "./src/file.h"
 
 using namespace std;
 
