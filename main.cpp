@@ -12,7 +12,7 @@ int main() {
     int intervals = 200;
     int limit = 20000;
 
-    File file("./csv/insertion.csv");
+    File file("./csv/selection.csv");
 
     for(int i = 100; i < limit; i += intervals) {
         cout << "INPUT: " << i << " ";
@@ -24,21 +24,21 @@ int main() {
 
         // Random
         t1.begin();
-        Sort::insertionSort(random, [](int n1, int n2) { return n1 > n2; });
+        int randomSwaps = Sort::selectionSort(random, [](int n1, int n2) { return n1 > n2; });
         t1.stop();
         
         // Ascending order input
         t2.begin();
-        Sort::insertionSort(asc, [](int n1, int n2) { return n1 > n2; });
+        int ascSwaps = Sort::selectionSort(asc, [](int n1, int n2) { return n1 > n2; });
         t2.stop();
 
         // Descending order input
         t3.begin();
-        Sort::insertionSort(dsc, [](int n1, int n2) { return n1 > n2; });
+        int dscSwaps = Sort::selectionSort(dsc, [](int n1, int n2) { return n1 > n2; });
         t3.stop();
 
         // Adding record to the csv file
-        file.addRecord(i, t1.getElapsedSeconds(), t2.getElapsedSeconds(), t3.getElapsedSeconds());
+        file.addRecord(i, t1.getElapsedSeconds(), t2.getElapsedSeconds(), t3.getElapsedSeconds(), randomSwaps, ascSwaps, dscSwaps);
 
     }
     return 0;

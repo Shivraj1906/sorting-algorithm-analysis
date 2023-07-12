@@ -14,11 +14,11 @@ class File {
             std::cout << "File opening error" << std::endl;
             exit(1);
         }
-        out << "input size, runtime in ms(unsorted), runtime in ms(ascending), runtime in ms(descending)" << std::endl;
+        out << "input size, runtime in ms(unsorted), runtime in ms(ascending), runtime in ms(descending), swaps(unsorted), swaps(ascending), swaps(descending)" << std::endl;
     }
 
-    void addRecord(int inputSize, double randomMs, double ascMs, double dscMs) {
-        out << inputSize << "," << randomMs << "," << ascMs << "," << dscMs << std::endl;
+    void addRecord(int inputSize, double randomMs, double ascMs, double dscMs, int swapRandom, int swapAsc, int swapDsc) {
+        out << inputSize << "," << randomMs << "," << ascMs << "," << dscMs << ", " << swapRandom << "," << swapAsc << "," << swapDsc << std::endl;
     }
 
     ~File() {
