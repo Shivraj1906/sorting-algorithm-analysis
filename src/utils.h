@@ -11,6 +11,14 @@ enum MODE {
 class Util {
     public:
 
+    // [lower, upper]
+    static int generateRandomInt(int lower, int upper) {
+        std::default_random_engine generator;
+        std::uniform_int_distribution<int> distribution(lower, upper);
+
+        return distribution(generator);
+    }
+
     static std::vector<int> generate(int size, MODE mode = RANDOM, int range = __INT_MAX__) {
         std::vector<int> output;
 

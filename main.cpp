@@ -12,33 +12,30 @@ int main() {
     int intervals = 200;
     int limit = 20000;
 
-    File file("./csv/selection.csv");
+    File file("./csv/quickRandom.csv", true);
 
     for(int i = 100; i < limit; i += intervals) {
         cout << "INPUT: " << i << " ";
         vector<int> random = Util::generate(i);
         vector<int> asc = Util::generate(i, ASC);
         vector<int> dsc = Util::generate(i, DSC);
-
-        Timer t1, t2, t3;
-
-        // Random
+        Timer t1;
+        Timer t2;
+        Timer t3;
+        
         t1.begin();
-        int randomSwaps = Sort::selectionSort(random, [](int n1, int n2) { return n1 > n2; });
+        Sort::quickSort(random, 0, random.size() - 1, [](int n1, int n2) { return n1 < n2; }, true);
         t1.stop();
         
-        // Ascending order input
         t2.begin();
-        int ascSwaps = Sort::selectionSort(asc, [](int n1, int n2) { return n1 > n2; });
+        Sort::quickSort(asc, 0, asc.size() - 1, [](int n1, int n2) { return n1 < n2; }, true);
         t2.stop();
 
-        // Descending order input
         t3.begin();
-        int dscSwaps = Sort::selectionSort(dsc, [](int n1, int n2) { return n1 > n2; });
+        Sort::quickSort(dsc, 0, dsc.size() - 1, [](int n1, int n2) { return n1 < n2; }, true);
         t3.stop();
-
         // Adding record to the csv file
-        file.addRecord(i, t1.getElapsedSeconds(), t2.getElapsedSeconds(), t3.getElapsedSeconds(), randomSwaps, ascSwaps, dscSwaps);
+        file.addRecord(i, t1.getElapsedSeconds(), t2.getElapsedSeconds(), t3.getElapsedSeconds());
 
     }
     return 0;
